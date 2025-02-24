@@ -1,9 +1,23 @@
+#steps:
+#  - name: "ubuntu"
+#    args:
+#      [
+#        "echo",
+#        "Hello Security Gurus! This is our first build run in Google Cloud Platform",
+#      ]
+
 steps:
-  - name: "ubuntu"
+  #Execute SnarCloud Scan
+  - name: maven:3-jdk-11
+    entrypoint: mvn
     args:
       [
-        "echo",
-        "Hello Security Gurus! This is our first build run in Google Cloud Platform",
+        "verify",
+        "sonar:sonar",
+        "-Dsonar.host.url=https://sonarcloud.io",
+        "-Dsonar.orgnization=gcpdevsecopsscan",
+        "-Dsonar.projectkey=gcpprojectkey",
+        "-Dsonar.login=15d005650ee8ec6a59f4803a50b7f50da811d962",
       ]
 
 options:

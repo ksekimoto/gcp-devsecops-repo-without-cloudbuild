@@ -1,6 +1,6 @@
 steps:
   #Execute SnarCloud Scan
-  - name: maven:3-jdk-11
+  - name: maven:3-eclipse-temurin-17
     entrypoint: mvn
     args:
       [

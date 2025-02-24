@@ -5,3 +5,6 @@ steps:
         "echo",
         "Hello Security Gurus! This is our first build run in Google Cloud Platform",
       ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
